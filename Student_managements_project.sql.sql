@@ -1,12 +1,4 @@
--- ===========================================
--- STUDENT MANAGEMENT DATABASE PROJECT
--- Developer: Onen Smith
--- Reg. No: CSC/2025/1234
--- ===========================================
-
--- Combine project owner info and student-course-teacher list
 (
-    -- 🧾 Project Owner section
     SELECT 
         'Project Owner: ' || student_name AS col1,
         'Reg No: ' || reg_number AS col2,
@@ -18,7 +10,6 @@
 UNION ALL
 
 (
-    -- 🎓 Students, Courses, and Teachers section
     SELECT
         'Student: ' || s.name AS col1,
         'Course: ' || c.course_name AS col2,
@@ -30,4 +21,4 @@ UNION ALL
     JOIN teachers t ON c.teacher_id = t.teacher_id
 )
 
-ORDER BY col1;  -- optional: remove this line if you want to keep your info always first
+ORDER BY col1;
