@@ -1,3 +1,48 @@
+CREATE TABLE teachers (
+    teacher_id SERIAL PRIMARY KEY,
+    name VARCHAR(100)
+);
+
+CREATE TABLE courses (
+    course_id SERIAL PRIMARY KEY,
+    course_name VARCHAR(100),
+    teacher_id INT REFERENCES teachers(teacher_id)
+);
+
+CREATE TABLE students (
+    student_id SERIAL PRIMARY KEY,
+    name VARCHAR(100)
+);
+
+CREATE TABLE enrollments (
+    enrollment_id SERIAL PRIMARY KEY,
+    student_id INT REFERENCES students(student_id),
+    course_id INT REFERENCES courses(course_id),
+    enrollment_date DATE
+);
+
+CREATE TABLE project_owner (
+    owner_id SERIAL PRIMARY KEY,
+    student_name VARCHAR(100),
+    reg_number VARCHAR(50),
+    project_title VARCHAR(150),
+    submission_date DATE
+);
+
+INSERT INTO teachers (name) VALUES ('Mr. Okafor'), ('Dr. Johnson');
+
+INSERT INTO courses (course_name, teacher_id)
+VALUES ('Mathematics', 1), ('Physics', 2);
+
+INSERT INTO students (name)
+VALUES ('Onen Smith'), ('Joy Emmanuel');
+
+INSERT INTO enrollments (student_id, course_id, enrollment_date)
+VALUES (1, 1, '2025-02-15'), (2, 2, '2025-03-10');
+
+INSERT INTO project_owner (student_name, reg_number, project_title, submission_date)
+VALUES ('Onen Emmanuel', '23/SEN/129', 'Student Management Database', '2025-10-27');
+
 (
     SELECT 
         'Project Owner: ' || student_name AS col1,

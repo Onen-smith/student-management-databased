@@ -1,14 +1,10 @@
-# Student Management Database Project
+# Student Management Database (PostgreSQL Project)
 
-This PostgreSQL project manages students, courses, teachers, and enrollments.
+## Developer: Onen Emmanuel Ojeje
+### Reg No: 23/SEN/129
 
-## Project Details
-- **Developer:** Onen Emmanuel Ojeje 
-- **Reg. No:** 23/SEN/129  
-- **Database Used:** PostgreSQL (pgAdmin 4)  
-- **File:** `student_management_project.sql`
-
-## How to Run
-1. Open pgAdmin or psql.
-2. Create a new database.
-3. Run the SQL script inside `student_management_project.sql`.
+### How to Run:
+1. Open pgAdmin and create a new database.
+2. Run `create_tables.sql` to create all tables.
+3. Run `insert_data.sql` to populate sample data.
+4. Run `project_query.sql` to view final output.
